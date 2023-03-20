@@ -29,8 +29,22 @@ public class User_Test {
     @Test
     public void testGetDegreeProgram() {
         User user = new User();
-        user.setDegreeProgram("gayaherath9468@gmail.com");
-        assertEquals("gayaherath9468@gmail.com", user.getDegreeProgram());
+        user.setDegreeProgram("Software Enineering");
+        assertEquals("Software Enineering", user.getDegreeProgram());
+    }
+
+    @Test
+    public void testGetIntake() {
+        User user = new User();
+        user.setIntake("38");
+        assertEquals("38", user.getIntake());
+    }
+
+    @Test
+    public void testGetDob() {
+        User user = new User();
+        user.setDob("08-10-2001");
+        assertEquals("08-10-2001", user.getDob());
     }
 
     @Test
