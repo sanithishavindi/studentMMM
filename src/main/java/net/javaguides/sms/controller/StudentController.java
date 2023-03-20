@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.javaguides.sms.entity.Student;
@@ -18,27 +19,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RestController
-@CrossOrigin("http://localhost:3306")
+//@RestController
+//@CrossOrigin("http://localhost:3306")
+//@RequestMapping("/students")
 public class StudentController {
 	@Autowired 
-	private StudentRepository studentRepository;
+	//private StudentRepository studentRepository;
 	private StudentService studentService;
 
-	@PostMapping("/students")
-	Student newStudent(@RequestBody Student newStudent){
-		return studentRepository.save(newStudent);
-	}
+	// @PostMapping("/students")
+	// Student newStudent(@RequestBody Student newStudent){
+	// 	return studentRepository.save(newStudent);
+	// }
 	
-	@GetMapping("/students")
-	List<Student> getAllStudents() {
-		return studentRepository.findAll();
-	}
+	// @GetMapping("/students")
+	// List<Student> getAllStudents() {
+	// 	return studentRepository.findAll();
+	// }
 	
 
 	public StudentController(StudentService studentService) {
 		super();
-		this.studentRepository = studentRepository;
+		this.studentService = studentService;
 	}
 	
 	// handler method to handle list students and return mode and view
