@@ -57,12 +57,12 @@ public class User_Test {
     @Test
     public void testNewUser() {
         User user = new User();
-        user.setStudentName("12345");
-        user.setRegno("John");
-        user.setFaculty("Doe");
-        user.setDegreeProgram("john.doe@example.com");
-        user.setIntake("Doe");
-        user.setDob("Doe");
+        user.setStudentName("Sanithi");
+        user.setRegno("D-BSE-21-0013");
+        user.setFaculty("FOC");
+        user.setDegreeProgram("Software Engineering");
+        user.setIntake("38");
+        user.setDob("08-10-2001");
         
 
         when(StudentRepository.save(any(User.class))).thenReturn(Student);
