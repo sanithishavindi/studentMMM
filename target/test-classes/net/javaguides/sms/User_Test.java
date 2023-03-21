@@ -54,5 +54,28 @@ public class User_Test {
         assertEquals(1L, user.getId().longValue());
     }
 
+    @Test
+    public void testNewUser() {
+        User user = new User();
+        user.setStudentName("12345");
+        user.setRegno("John");
+        user.setFaculty("Doe");
+        user.setDegreeProgram("john.doe@example.com");
+        user.setIntake("Doe");
+        user.setDob("Doe");
+        
+
+        when(userRepository.save(any(User.class))).thenReturn(user);
+
+        User savedUser = userController.newUser(user);
+
+        assertEquals(user.getStudentName(), savedUser.getStudentName());
+        assertEquals(user.getRegno(), savedUser.getRegno());
+        assertEquals(user.getFaculty(), savedUser.getFaculty());
+        assertEquals(user.getDegreeProgram(), savedUser.getDegreeProgram());
+        assertEquals(user.getIntake(), savedUser.getIntake());
+        assertEquals(user.getDob(), savedUser.getDob());
+}
+
 
 }
