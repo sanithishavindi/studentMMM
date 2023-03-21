@@ -65,9 +65,9 @@ public class User_Test {
         user.setDob("Doe");
         
 
-        when(userRepository.save(any(User.class))).thenReturn(user);
+        when(StudentRepository.save(any(User.class))).thenReturn(Student);
 
-        User savedUser = userController.newUser(user);
+        User savedUser = StudentController.newUser(user);
 
         assertEquals(user.getStudentName(), savedUser.getStudentName());
         assertEquals(user.getRegno(), savedUser.getRegno());
